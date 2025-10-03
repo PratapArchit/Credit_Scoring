@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply bg-[#070B16] text-slate-100 antialiased; }
+}
+/* Dark, high-contrast dropdown menu for all selects that use .select-contrast */
+.select-contrast {
+  /* keep your glass look on the closed select */
+  background: linear-gradient(180deg, rgba(9,18,28,.90), rgba(10,16,24,.96));
+  border: 1px solid rgba(94,234,212,.35);
+  color: #e6f4ff;
+}
+
+/* The actual options list */
+.select-contrast option,
+.select-contrast optgroup {
+  background-color: #0b1220; /* deep slate */
+  color: #e6f4ff;            /* bright text */
+}
+
+/* Focus ring + border when opened */
+.select-contrast:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(94,234,212,.45);
+  border-color: rgba(94,234,212,.8);
+}
+
+/* Windows & Firefox can be picky—ensure dark rows there too */
+@-moz-document url-prefix() {
+  .select-contrast option { background-color: #0b1220; }
+}
+
+/* ---- Solid background (no animation) ---- */
+.bg-solid-aurora {
+  /* deep, non-moving gradient with subtle vignette */
+  background:
+    radial-gradient(1200px 600px at 85% 10%, rgba(72,216,171,.12), transparent 60%),
+    radial-gradient(1200px 600px at 15% 90%, rgba(124,93,255,.10), transparent 60%),
+    linear-gradient(135deg, #0e1022 0%, #0a0f1c 60%, #0a121c 100%);
+}
+
+/* Optional: use an image instead of solid gradient
+.bg-solid-aurora {
+  background-image: url('/bg-mountain.jpg');
+  background-size: cover;
+  background-position: center;
+}
+*/
+
+/* ---- Glass card + inputs (teal/white like your ref) ---- */
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.07));
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  backdrop-filter: blur(14px);
+}
+
+.input-glass {
+  background: linear-gradient(180deg, rgba(8,18,28,.85), rgba(8,16,24,.92));
+  border: 1px solid rgba(255,255,255,.10);
+  color: #e6f4ff;
+}
+
+.input-glass::placeholder { color: rgba(230,244,255,.45); }
+
+.btn-primary {
+  background: linear-gradient(90deg, #9b8cff, #5eead4);
+  color: #0a1220;
+  font-weight: 700;
+}

@@ -7,11 +7,11 @@ import pandas as pd
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from credit_score_pipeline import (
+from backend.credit_score_pipeline import (
     engineer_features,
     load_model,
     prob_to_cibil,
-    make_bands,
+    make_bands, 
     attach_reasons,
 )
 

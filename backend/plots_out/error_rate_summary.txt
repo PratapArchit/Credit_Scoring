@@ -1,0 +1,2 @@
+Average Percentage Error Rate: 1.82%
+Average Root Mean Square Error Rate: 16.36%
